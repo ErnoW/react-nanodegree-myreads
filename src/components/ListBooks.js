@@ -8,9 +8,15 @@ const ListBooks = (props) => (
     </div>
     <div className="list-books-content">
       <div>
-        <BookShelf category="Currently Reading" />
-        <BookShelf category="Want to Read" />
-        <BookShelf category="Read" />
+        <BookShelf 
+          category="Currently Reading"
+          books={props.books.filter(book => book.shelf === 'currentlyReading')}/>
+        <BookShelf
+          category="Want to Read"
+          books={props.books.filter(book => book.shelf === 'wantToRead')}/>
+        <BookShelf
+          category="Read"
+          books={props.books.filter(book => book.shelf === 'read')}/>
       </div>
     </div>
     <div className="open-search">

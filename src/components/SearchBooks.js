@@ -2,11 +2,11 @@ import React from 'react';
 import BooksGrid from './BooksGrid'
 import SearchBooksBar from './SearchBooksBar'
 
-const SearchBooks = () => (
+const SearchBooks = (props) => (
   <div className="search-books">
     <SearchBooksBar/>
     <div className="search-books-results">
-      <BooksGrid />
+      <BooksGrid/>
     </div>
   </div>
 )

@@ -5,7 +5,7 @@ const BookShelf = (props) => (
   <div className="bookshelf">
     <h2 className="bookshelf-title">{props.category}</h2>
     <div className="bookshelf-books">
-      <BooksGrid/>
+      <BooksGrid books={props.books}/>
     </div>
   </div>
 )
