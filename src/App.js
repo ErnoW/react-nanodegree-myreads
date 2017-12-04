@@ -7,8 +7,7 @@ import ListBooks from './components/ListBooks'
 
 class BooksApp extends Component {
   state = {
-    books: [],
-    query: ''
+    books: []
   }
 
   componentDidMount() {
