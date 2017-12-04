@@ -10,13 +10,16 @@ const ListBooks = (props) => (
       <div>
         <BookShelf 
           category="Currently Reading"
-          books={props.books.filter(book => book.shelf === 'currentlyReading')}/>
+          books={props.books.filter(book => book.shelf === 'currentlyReading')}
+          onUpdateBook={props.onUpdateBook}/>
         <BookShelf
           category="Want to Read"
-          books={props.books.filter(book => book.shelf === 'wantToRead')}/>
+          books={props.books.filter(book => book.shelf === 'wantToRead')}
+          onUpdateBook={props.onUpdateBook}/>
         <BookShelf
           category="Read"
-          books={props.books.filter(book => book.shelf === 'read')}/>
+          books={props.books.filter(book => book.shelf === 'read')}
+          onUpdateBook={props.onUpdateBook}/>
       </div>
     </div>
     <div className="open-search">

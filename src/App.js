@@ -23,8 +23,16 @@ class BooksApp extends React.Component {
   getBooks() {
     BooksAPI.getAll().then(books => {
       this.setState({books})
-      console.log(books); //TEST: show initial loaded books
+      console.log(this.state); //TEST: show initial loaded books
     });
+  }
+
+  updateBook(book, shelf) {
+    BooksAPI.update(book, shelf).then(books => {
+      let newBooks = [...this.state.books];
+      newBooks[newBooks.findIndex(oldBook => oldBook.id === book.id)].shelf = shelf;
+      this.setState({books: newBooks});
+    })
   }
 
   render() {
@@ -33,7 +41,10 @@ class BooksApp extends React.Component {
         {this.state.showSearchPage ? (
           <SearchBooks books={this.state.books}/>
         ) : (
-            <ListBooks onClickSearch={() => this.setState({ showSearchPage: true })} books={this.state.books}/>
+            <ListBooks
+              onClickSearch={() => this.setState({ showSearchPage: true })}
+              onUpdateBook={(book, shelf) => this.updateBook(book, shelf)}
+              books={this.state.books}/>
         )}
       </div>
     )
