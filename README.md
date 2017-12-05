@@ -19,3 +19,6 @@ This project is part of my React Nanodegree course at Udacity. It doesn't make a
 
 ## Author
 * Erno Wever
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
