@@ -15,7 +15,6 @@ class SearchBooks extends Component {
     if (query === '') {
       return this.setState({ searchResults: [] });
     }
-
     this.getSearchResults(escapeRegExp(query));
   }
 
@@ -25,7 +24,6 @@ class SearchBooks extends Component {
         return this.setState({ searchResults: [] })
       }
       this.setShelve(searchResults);
-
       this.setState({ searchResults });   
     });
   }
@@ -33,9 +31,7 @@ class SearchBooks extends Component {
   setShelve = (books) => {
     books.map((searchedBook) => {
       for (let shelvedBook of this.props.books) {
-        //console.log(shelvedBook);
         if (shelvedBook.id === searchedBook.id) {
-          console.log('same');
           return searchedBook.shelf = shelvedBook.shelf;
         }
       }
@@ -63,7 +59,6 @@ class SearchBooks extends Component {
       </div>
     )
   }
-  
 }
 
 export default SearchBooks;
