@@ -30,12 +30,10 @@ class SearchBooks extends Component {
 
   setShelve = (books) => {
     books.map((searchedBook) => {
-      for (let shelvedBook of this.props.books) {
-        if (shelvedBook.id === searchedBook.id) {
-          return searchedBook.shelf = shelvedBook.shelf;
-        }
-      }
-      return searchedBook.shelf = 'none';
+      let match = this.props.books.find((shelvedBook) => (
+        shelvedBook.id === searchedBook.id
+      ));
+      return searchedBook.shelf = match ? match.shelf : 'none'; 
     })
   }
 
