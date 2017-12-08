@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from '../BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import BooksGrid from './BooksGrid'
+import { debounce } from 'throttle-debounce'
 
 class SearchBooks extends Component {
   state = {
     query: '',
     searchResults: []
+  }
+
+  componentWillMount() {
+    this.getSearchResults = debounce(150, this.getSearchResults);
   }
 
   updateQuery = (query) => {
