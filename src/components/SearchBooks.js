@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { debounce } from 'throttle-debounce'
 import * as BooksAPI from '../BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import BooksGrid from './BooksGrid'
-import { debounce } from 'throttle-debounce'
 
 class SearchBooks extends Component {
   state = {
@@ -62,6 +63,11 @@ class SearchBooks extends Component {
       </div>
     )
   }
+}
+
+SearchBooks.propTypes = {
+  books: PropTypes.array.isRequired,
+  onUpdateBook: PropTypes.func.isRequired
 }
 
 export default SearchBooks;
