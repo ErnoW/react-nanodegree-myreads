@@ -1,36 +1,36 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import SearchBooks from '../components/SearchBooks'
+import React from 'react';
+import { shallow } from 'enzyme';
+import SearchBooks from '../components/SearchBooks';
 
-describe("SearchBooks", () => {
-  let props = {
+describe('SearchBooks', () => {
+  const props = {
     books: [
       {
         id: '1',
         authors: ['author'],
         title: 'title',
         imageLinks: {
-          smallThumbnail: null
+          smallThumbnail: null,
         },
-        shelf: 'none'
+        shelf: 'none',
       },
       {
         id: '1',
         authors: ['author'],
         title: 'title',
         imageLinks: {
-          smallThumbnail: null
+          smallThumbnail: null,
         },
-        shelf: 'none'
-      }
+        shelf: 'none',
+      },
     ],
-    onUpdateBook: jest.fn()
-  }
+    onUpdateBook: jest.fn(),
+  };
 
   const componentWrapper = () => shallow(<SearchBooks {...props} />);
 
   it('renders itstelf', () => {
-    const divs = componentWrapper().find("div");
+    const divs = componentWrapper().find('div');
     expect(divs.length).toBeGreaterThan(0);
   });
-})
+});

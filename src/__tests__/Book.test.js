@@ -1,25 +1,25 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import Book from '../components/Book'
+import React from 'react';
+import { shallow } from 'enzyme';
+import Book from '../components/Book';
 
-describe("Book", () => {
-  let props = {
+describe('Book', () => {
+  const props = {
     book: {
       id: '1',
       authors: ['author1', 'author2'],
       title: 'title',
       imageLinks: {
-        smallThumbnail: null
+        smallThumbnail: null,
       },
-      shelf: 'none'
+      shelf: 'none',
     },
-    onUpdateBook: jest.fn()
-  }
+    onUpdateBook: jest.fn(),
+  };
 
   const componentWrapper = () => shallow(<Book {...props} />);
 
   it('renders itstelf', () => {
-    const divs = componentWrapper().find("div");
+    const divs = componentWrapper().find('div');
     expect(divs.length).toBeGreaterThan(0);
   });
 
@@ -32,4 +32,4 @@ describe("Book", () => {
     const bookAuthors = componentWrapper().find('.book-authors');
     expect(bookAuthors.length).toBeGreaterThan(0);
   });
-})
+});
