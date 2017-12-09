@@ -1,4 +1,6 @@
 {
+  "name": "myreads",
+  "version": "1.0.0",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "prop-types": "^15.6.0",
